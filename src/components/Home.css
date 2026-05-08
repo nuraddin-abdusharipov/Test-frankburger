@@ -97,7 +97,6 @@
 
 .item {
   flex: none;
-  padding: 10px 20px;
   background: rgba(255,255,255,0.08);
   color: #ddd;
   border-radius: 30px;
@@ -107,6 +106,7 @@
   cursor: pointer;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255,255,255,0.1);
+  padding: 10px 20px 30px;
 }
 
 .item:hover {

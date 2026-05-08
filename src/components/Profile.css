@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 .profile-header {
   padding: 15px 20px;
   display: flex;
@@ -41,6 +45,7 @@
 
 .back-btn:hover {
   background: rgba(231,76,60,0.3);
+  transform: translateY(-2px);
 }
 
 .profile-content {
@@ -53,12 +58,18 @@
 .profile-avatar-section {
   text-align: center;
   margin-bottom: 30px;
+  animation: scaleIn 0.5s ease;
 }
 
 .avatar {
   width: 110px;
   height: 110px;
   margin: 0 auto 18px;
+  transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
 }
 
 .avatar img {
@@ -107,6 +118,7 @@
   font-size: 12px;
   font-weight: 600;
   display: inline-block;
+  animation: pulse 2s ease infinite;
 }
 
 /* Admin button */
@@ -134,10 +146,7 @@
 .admin-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-::-webkit-scrollbar {
-    display: none;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
 /* Stats section */
@@ -148,6 +157,11 @@
   padding: 18px;
   margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+}
+
+.stats-section:hover {
+  border-color: rgba(231,76,60,0.3);
 }
 
 .stats-section h3 {
@@ -174,6 +188,7 @@
 
 .stat-item:hover {
   background: rgba(255,255,255,0.07);
+  transform: translateX(5px);
 }
 
 .stat-icon {
@@ -207,6 +222,11 @@
   padding: 18px;
   margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+}
+
+.info-section:hover {
+  border-color: rgba(231,76,60,0.3);
 }
 
 .info-section h3 {

@@ -205,7 +205,7 @@ function Profile() {
                 </div>
 
                 <Link to="/orders" className="my-orders-btn">
-                    📋 Mening zakazlarim
+                    📋 Mening buyurtmalarim
                 </Link>
             </div>
         </div>

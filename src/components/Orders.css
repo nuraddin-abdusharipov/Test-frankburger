@@ -1,5 +1,5 @@
 .OrdersPage {
-  height: 90%;
+  min-height: 90vh;
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
@@ -8,8 +8,8 @@
   animation: fadeInUp 0.4s ease;
 }
 
-.OrdersPage::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar {
+    display: none;
 }
 
 /* Header */
@@ -45,6 +45,7 @@
 
 .orders-header a:hover {
   background: rgba(231,76,60,0.3);
+  transform: translateY(-1px);
 }
 
 .telegram-id-text {
@@ -64,10 +65,13 @@
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.3s ease;
+  animation: scaleIn 0.3s ease;
 }
 
-.order-card:active {
-  transform: scale(0.98);
+.order-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(231,76,60,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 .order-header {
@@ -94,21 +98,10 @@
   backdrop-filter: blur(5px);
 }
 
-.status-new {
-  background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.status-preparing {
-  background: linear-gradient(135deg, #f39c12, #e67e22);
-}
-
-.status-delivering {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-}
-
-.status-completed {
-  background: linear-gradient(135deg, #27ae60, #1e8449);
-}
+.status-new { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+.status-preparing { background: linear-gradient(135deg, #f39c12, #e67e22); }
+.status-delivering { background: linear-gradient(135deg, #3498db, #2980b9); }
+.status-completed { background: linear-gradient(135deg, #27ae60, #1e8449); }
 
 /* Order body */
 .order-body {
@@ -197,6 +190,11 @@
   transition: all 0.3s ease;
 }
 
+.load-more-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52,152,219,0.4);
+}
+
 .load-more-btn:active {
   transform: scale(0.97);
 }
@@ -227,4 +225,9 @@
   border-radius: 40px;
   font-weight: bold;
   transition: all 0.3s ease;
+}
+
+.order-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231,76,60,0.4);
 }

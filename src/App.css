@@ -10,7 +10,7 @@ body {
   background: #0f0f0f;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .App {
@@ -18,11 +18,14 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
   background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
 /* Dekorativ orqa fon elementlari */
@@ -74,11 +77,20 @@ body {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
@@ -111,10 +123,34 @@ body {
   }
 }
 
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0%, 100% {
+    border-color: rgba(231,76,60,0.3);
+    box-shadow: 0 0 0 0 rgba(231,76,60,0.2);
+  }
+  50% {
+    border-color: rgba(231,76,60,0.8);
+    box-shadow: 0 0 0 4px rgba(231,76,60,0.2);
+  }
+}
+
 /* Buttons base */
 button {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  border: none;
+  outline: none;
 }
 
 button:active {
@@ -133,4 +169,27 @@ button:active {
 .card:hover {
   transform: translateY(-3px);
   background: rgba(255,255,255,0.08);
+  border-color: rgba(231,76,60,0.3);
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 16px;
+}
+
+/* Custom marker pulse */
+.custom-marker {
+  animation: markerPulse 2s ease infinite;
+}
+
+@keyframes markerPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(231,76,60,0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(231,76,60,0.8));
+  }
 }

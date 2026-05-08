@@ -132,11 +132,11 @@ function Admin() {
             if (orderSnap.exists()) {
                 setSelectedOrder({ id: orderSnap.id, ...orderSnap.data() });
             } else {
-                showTelegramAlert('Zakaz topilmadi!');
+                showTelegramAlert('Buyurtma topilmadi!');
                 navigate('/admin');
             }
         } catch (error) {
-            console.error('Zakaz detalini olishda xatolik:', error);
+            console.error('Buyurtma detalini olishda xatolik:', error);
             navigate('/admin');
         }
     };
@@ -144,26 +144,26 @@ function Admin() {
     // Statusga qarab foydalanuvchiga xabar yuborish
     const sendStatusMessageToUser = async (orderData, newStatus) => {
         let message = `🍔 FRANK BURGER 🍔\n\n`
-        message += `🆔 Zakaz ID: ${orderData.orderId}\n`
+        message += `🆔 Buyurtma ID: ${orderData.orderId}\n`
         message += `💰 Jami: ${orderData.totalAmount.toLocaleString()} so'm\n\n`
         
         switch(newStatus) {
             case 'Tayyorlanmoqda':
-                message += `👨‍🍳 Sizning zakazingiz TAYYORLANMOQDA!\n\n`
+                message += `👨‍🍳 Sizning buyurtmangiz TAYYORLANMOQDA!\n\n`
                 message += `🔧 Oshpazlar buyurtmangizni tayyorlashga kirishdi.\n`
                 message += `⏱️ Tez orada yetkazib berish xizmatiga topshiriladi.\n\n`
                 message += `📦 Holati: Tayyorlanmoqda 🔧`
                 break
                 
             case 'Yetkazilmoqda':
-                message += `🛵 Sizning zakazingiz YETKAZILMOQDA!\n\n`
+                message += `🛵 Sizning buyurtmangiz YETKAZILMOQDA!\n\n`
                 message += `🚚 Buyurtmangiz yo'lda! Tez orada sizga yetib boradi.\n`
                 message += `📍 Yetkazib beruvchi manzilingizga yo'l oldi.\n\n`
                 message += `📦 Holati: Yetkazilmoqda 🚚`
                 break
                 
             case 'Bajarilgan':
-                message += `✅ Sizning zakazingiz BAJARILDI!\n\n`
+                message += `✅ Sizning buyurtmangiz BAJARILDI!\n\n`
                 message += `🎉 Buyurtmangiz muvaffaqiyatli yakunlandi!\n`
                 message += `⭐ Bizni tanlaganingiz uchun rahmat!\n`
                 message += `🍽️ Yana xush kelibsiz!\n\n`
@@ -226,9 +226,9 @@ function Admin() {
             }
             
             if (userMessageSent) {
-                showTelegramAlert(`✅ Zakaz statusi "${statusText}" ga o'zgartirildi va foydalanuvchiga xabar yuborildi!`)
+                showTelegramAlert(`✅ Buyurtma statusi "${statusText}" ga o'zgartirildi va foydalanuvchiga xabar yuborildi!`)
             } else {
-                showTelegramAlert(`✅ Zakaz statusi "${statusText}" ga o'zgartirildi! (Foydalanuvchiga xabar yuborilmadi)`)
+                showTelegramAlert(`✅ Buyurtma statusi "${statusText}" ga o'zgartirildi! (Foydalanuvchiga xabar yuborilmadi)`)
             }
             
             hapticFeedback()
@@ -290,7 +290,7 @@ function Admin() {
                     <button onClick={() => navigate('/admin')} className="back-btn">
                         ← Orqaga
                     </button>
-                    <h1>Zakaz #{selectedOrder.orderId}</h1>
+                    <h1>Buyurtma     #{selectedOrder.orderId}</h1>
                 </div>
 
                 <div className="order-detail">

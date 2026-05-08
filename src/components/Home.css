@@ -1,7 +1,7 @@
 .Home {
   display: flex;
   width: 100%;
-  height: 90%;
+  min-height: 90vh;
   align-items: center;
   justify-content: start;
   flex-direction: column;
@@ -25,6 +25,11 @@
 .nav img {
   height: 45px;
   filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  transition: transform 0.3s ease;
+}
+
+.nav img:hover {
+  transform: scale(1.05);
 }
 
 .nav h2 {
@@ -71,6 +76,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  animation: pulse 1.5s ease infinite;
 }
 
 /* Categories scroll bar */
@@ -106,7 +112,7 @@
   cursor: pointer;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255,255,255,0.1);
-  padding: 10px 20px 30px;
+  padding: 10px 20px;
 }
 
 .item:hover {
@@ -224,12 +230,4 @@
   text-align: center;
   padding: 50px;
   color: #888;
-}
-
-/* Loading skeleton */
-.skeleton {
-  background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-  border-radius: 16px;
 }

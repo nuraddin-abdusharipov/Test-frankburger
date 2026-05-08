@@ -11,7 +11,7 @@ function Admin() {
     const [selectedOrder, setSelectedOrder] = useState(null)
     const [loading, setLoading] = useState(true)
     const [filter, setFilter] = useState('all')
-    const [isAdmin, setIsAdmin] = useState(false)
+    const [isAdmin, setIsAdmin] = useState(true)
     const [telegramId, setTelegramId] = useState(null)
     const [leafletLoaded, setLeafletLoaded] = useState(false)
     const mapRef = useRef(null)

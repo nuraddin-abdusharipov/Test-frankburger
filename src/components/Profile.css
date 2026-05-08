@@ -1,240 +1,288 @@
 .ProfilePage {
-    height: 90%;
-    overflow: auto;
-    padding-bottom: 30px;
+  height: 90%;
+  overflow: auto;
+  padding-bottom: 30px;
+  animation: fadeInUp 0.4s ease;
+  max-width: 400px;
+  width: 100%;
+}
+
+.profile-header {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(26,26,46,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.profile-header h1 {
+  margin: 0;
+  font-size: 20px;
+  background: linear-gradient(135deg, #fff, #ff6b35);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  background: rgba(255,255,255,0.1);
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: rgba(231,76,60,0.3);
+}
+
+.profile-content {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Avatar */
+.profile-avatar-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(231,76,60,0.5);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e74c3c, #ff6b35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: white;
+  border: 3px solid rgba(255,255,255,0.3);
+}
+
+.user-name {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff, #ddd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.user-username {
+  margin: 0 0 12px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.telegram-id {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Admin button */
+.admin-section {
+  margin-bottom: 25px;
+}
+
+.admin-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #2c3e50, #1a252f);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-.profile-header {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.profile-header h1 {
-    margin: 0;
-    font-size: 20px;
-}
-
-.back-btn {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-}
-
-.profile-content {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.profile-avatar-section {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.avatar {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 15px;
-}
-
-.avatar img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.avatar-placeholder {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-}
-
-.user-name {
-    margin: 0 0 5px;
-    font-size: 22px;
-    color: white;
-}
-
-.user-username {
-    margin: 0 0 10px;
-    color: #999;
-    font-size: 14px;
-}
-
-.telegram-id {
-    color: #27ae60;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    display: inline-block;
-}
-
-.admin-section {
-    margin-bottom: 25px;
-}
-
-.admin-btn {
-    width: 100%;
-    padding: 14px;
-    background: linear-gradient(135deg, #2c3e50, #1a252f);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-}
-
-.admin-btn:hover {
-    background: linear-gradient(135deg, #1a252f, #2c3e50);
-}
-
+/* Stats section */
 .stats-section {
-    border-radius: 20px;
-    padding: 15px;
-    margin-bottom: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .stats-section h3 {
-    margin: 0 0 15px;
-    font-size: 16px;
-    color: white;
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
 }
 
 .stat-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px;
-    border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255,255,255,0.07);
 }
 
 .stat-icon {
-    font-size: 30px;
+  font-size: 32px;
 }
 
 .stat-info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-number {
-    font-size: 20px;
-    font-weight: bold;
-    color: #e74c3c;
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b35, #e74c3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .stat-label {
-    font-size: 12px;
-    color: #999;
+  font-size: 11px;
+  color: #aaa;
 }
 
+/* Info section */
 .info-section {
-    border-radius: 20px;
-    padding: 15px;
-    margin-bottom: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 .info-section h3 {
-    margin: 0 0 15px;
-    font-size: 16px;
-    color: white;
+  margin: 0 0 18px;
+  font-size: 17px;
+  font-weight: 600;
 }
 
 .info-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .info-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #f0f0f0;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .info-row:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .info-label {
-    font-size: 14px;
-    color: white;
+  font-size: 13px;
+  color: #aaa;
 }
 
 .info-value {
-    font-size: 14px;
-    font-weight: 500;
-    color: white;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
 }
 
+/* My orders button */
 .my-orders-btn {
-    display: block;
-    text-align: center;
-    padding: 14px;
-    background: #e74c3c;
-    color: white;
-    text-decoration: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 10px;
+  display: block;
+  text-align: center;
+  padding: 15px;
+  background: linear-gradient(135deg, #e74c3c, #ff6b35);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231,76,60,0.3);
 }
 
 .my-orders-btn:hover {
-    background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231,76,60,0.4);
 }
 
+/* Loading */
 .loading-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .loader {
-    width: 40px;
-    height: 40px;
-    border-top: 3px solid #e74c3c;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+  width: 45px;
+  height: 45px;
+  border: 3px solid rgba(231,76,60,0.2);
+  border-top: 3px solid #e74c3c;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

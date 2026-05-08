@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: start;
   flex-direction: column;
-  max-width: 450px;
+  max-width: 400px;
   margin: 0 auto;
   animation: fadeInUp 0.5s ease;
 }

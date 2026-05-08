@@ -1,162 +1,207 @@
 .CheckoutPage {
-    height: 90%;
-    padding-bottom: 30px;
-    width: 100%;
-    max-width: 400px;
-    overflow: auto;
-}
-
-::-webkit-scrollbar {
-    display: none;
+  height: 90%;
+  padding-bottom: 30px;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  overflow: auto;
+  animation: fadeInUp 0.4s ease;
 }
 
 .checkout-header {
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
-
-.back-btn {
-    text-decoration: none;
-    font-size: 18px;
-    color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(26,26,46,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  flex-wrap: wrap;
 }
 
 .checkout-header h1 {
-    margin: 0;
-    font-size: 18px;
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+}
+
+.telegram-badge {
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 .checkout-content {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 15px;
 }
 
 .form-section {
-    border-radius: 15px;
-    padding: 20px;
-    margin-bottom: 15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease;
+}
+
+.form-section:hover {
+  border-color: rgba(231,76,60,0.3);
 }
 
 .form-section h2 {
-    margin: 0 0 15px 0;
-    font-size: 18px;
+  margin: 0 0 18px 0;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .form-row {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
 .form-group {
-    flex: 1;
-    margin-bottom: 15px;
+  flex: 1;
+  margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #666;
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #aaa;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 14px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 14px;
+  font-size: 14px;
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #e74c3c;
+  outline: none;
+  border-color: #e74c3c;
+  background: rgba(255,255,255,0.12);
 }
 
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #666;
+}
+
+/* Map */
 .map-container {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .map {
-    height: 300px;
-    border-radius: 12px;
-    margin-bottom: 10px;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .map-hint {
-    font-size: 12px;
-    color: #999;
-    text-align: center;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 10px;
+  color: #aaa;
 }
 
+.map-hint:has(✅) {
+  color: #2ecc71;
+}
+
+/* Order summary */
 .order-summary {
-    border-top: 1px solid #eee;
-    padding-top: 15px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 15px;
 }
 
 .order-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 14px;
+  color: white;
+}
+
+.order-item span{
     color: white;
 }
 
 .order-total {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    border-top: 1px solid #eee;
-    font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 18px;
+}
+
+.order-total strong:first-child {
+  font-weight: 600;
 }
 
 .order-total strong:last-child {
-    color: #e74c3c;
+  background: linear-gradient(135deg, #ff6b35, #e74c3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 20px;
 }
 
 .submit-btn {
-    width: 100%;
-    padding: 16px;
-    background: #e74c3c;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #e74c3c, #ff6b35);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231,76,60,0.4);
 }
 
-.submit-btn:hover {
-    background: #c0392b;
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(231,76,60,0.5);
 }
 
-.telegram-badge {
-    background: #27ae60;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: normal;
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.map-hint {
-    font-size: 12px;
-    text-align: center;
-    margin-top: 8px;
-}
-
-.map-hint:has(✅) {
-    color: #27ae60;
+/* Custom marker animation */
+@keyframes markerPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
 }

@@ -366,7 +366,7 @@ function Checkout() {
         <div className="CheckoutPage">
             <div className="checkout-header">
                 <Link to="/cart" className="back-btn">← Orqaga</Link>
-                <h1>Zakazni rasmiylashtirish</h1>
+                <h1>Buyurtmani rasmiylashtirish</h1>
                 {telegramId && (
                     <div className="telegram-badge">
                         ID: {telegramId}
@@ -444,9 +444,9 @@ function Checkout() {
                                 value={formData.deliveryTime}
                                 onChange={handleInputChange}
                             >
-                                <option value="">Vaqtni tanlang</option>
+                                <option style={{background: "black"}} value="">Vaqtni tanlang</option>
                                 {deliveryTimes.map(time => (
-                                    <option key={time} value={time}>{time}</option>
+                                    <option style={{background: "black"}} key={time} value={time}>{time}</option>
                                 ))}
                             </select>
                         </div>
@@ -463,7 +463,7 @@ function Checkout() {
                     </div>
 
                     <div className="form-section">
-                        <h2>🛍️ Zakaz haqida</h2>
+                        <h2>🛍️ Buyurtma haqida</h2>
                         <div className="order-summary">
                             {cart.map(item => (
                                 <div key={item.id} className="order-item">
@@ -479,7 +479,7 @@ function Checkout() {
                     </div>
 
                     <button type="submit" className="submit-btn" disabled={loading}>
-                        {loading ? "Yuborilmoqda..." : "✅ Zakazni tasdiqlash"}
+                        {loading ? "Yuborilmoqda..." : "✅ Buyurtmani tasdiqlash"}
                     </button>
                 </form>
             </div>
